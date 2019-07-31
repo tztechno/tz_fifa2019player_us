@@ -1383,9 +1383,9 @@ const HelpIntentHandler = {
     },
     handle(handlerInput) {
         const speechText = 'Welcome to FIFA 2019 player data. This skill displays the profile of FIFA players. \
-        You can search your favorite player by touching the screen. It is also possible to advance the filtering by voice instead of touch. \
-        If you narrow down by country of origin and team, you will see a list of player names. Select a player name and the player\'s profile \
-        will be displayed. First, in the menu, from Nation, Club 1, Club 2, Club 3. Please tap the screen or select by voice.<break time ="2s"/>'
+        You can search your favorite player by touching the screen or voice. \
+        If you narrow down by country of origin and team, you will see a list of player names. Select a player and the player\'s profile \
+        will be displayed. First, please tap the screen or select Nation, Club 1, Club 2 or Club 3 by voice.<break time ="2s"/>'
         const reprompt2 = 'To go to the menu screen, say Reset or Menu. Please tap the screen or select by voice.<break time ="2s"/>' 
         
         return handlerInput.responseBuilder
