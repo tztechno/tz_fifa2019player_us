@@ -1,0 +1,55 @@
+{
+    "type": "APL",
+    "version": "1.0",
+    "theme": "dark",
+    "import": [{
+        "name": "alexa-layouts",
+        "version": "1.0.0"
+    }],
+    "mainTemplate": {
+
+        "parameters": [
+            "payload"
+        ],
+        "items": [{
+            "type": "Container",
+            "alignItems": "center",
+            "justifyContent": "center",
+            "paddingTop": "40vh",
+            "height": "80vh",
+            "items": [{
+                    "type": "Text",
+                    "text": "FIFA 2019 PLAYER",
+                    "paddingTop": "10vh",
+                    "textAlign": "center",
+                    "color": "red",
+                    "fontSize": "40dp"
+                },
+                {
+                    "type": "Sequence",
+                    "scrollDirection": "vertical",
+
+                    "data": "${payload.menu_data.text}",
+                    "width": "100vw",
+                    "height": "80vh",
+                    "item": {
+                        "type": "TouchWrapper",
+                        "onPress": {
+                            "type": "SendEvent",
+                            "arguments": [
+                                "${data}"
+                            ]
+                        },
+                        "item": {
+                            "type": "Text",
+                            "text": "${data}",
+                            "textAlign": "center",
+                            "textAlignVertical": "center",
+                            "fontWeight": "700"
+                        }
+                    }
+                }
+            ]
+        }]
+    }
+}
