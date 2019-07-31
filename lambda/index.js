@@ -44,8 +44,7 @@ const LaunchRequestHandler = {
             attributes.data3 = [];
             
         const speechText = 'Welcome to FIFA 2019 PLAYER.<break time = "1s" /> Display the player\'s profile. \
-        Please select players by narrowing down from your country of origin or team name. On the menu, select \
-        Nation, Club 1, Club 2 or Club 3 by tapping the screen or by vocie.<break time = "2s" /> ';
+        Please select players by narrowing down from your country of origin or team name. Select Nation, Club 1, Club 2 or Club 3 by tapping the screen or by vocie.<break time = "2s" /> ';
         const reprompt2 = 'On the menu, from the nation, club 1, club 2, club 3, please tap the screen or select by voice.<break time = "2s" />';
         const speechText2 = 'Welcome to FIFA 2019 PLAYER. You need a screen device to use this skill. It can not be used with your device.<break time = "2s" /> ';
 
@@ -1384,8 +1383,8 @@ const HelpIntentHandler = {
             && handlerInput.requestEnvelope.request.intent.name === 'AMAZON.HelpIntent';
     },
     handle(handlerInput) {
-        const speechText = 'Welcome to FIFA 2019 player data. It is a skill that displays the profile of FIFA registered players. \
-        From the menu screen, you can narrow down by touching the screen. It is also possible to advance the filtering by voice instead of touch. \
+        const speechText = 'Welcome to FIFA 2019 player data. This skill displays the profile of FIFA players. \
+        You can search your favorite player by touching the screen. It is also possible to advance the filtering by voice instead of touch. \
         If you narrow down by country of origin and team, you will see a list of player names. Select a player name and the player\'s profile \
         will be displayed. First, in the menu, from Nation, Club 1, Club 2, Club 3. Please tap the screen or select by voice.<break time ="2s"/>'
         const reprompt2 = 'To go to the menu screen, say Reset or Menu. Please tap the screen or select by voice.<break time ="2s"/>' 
