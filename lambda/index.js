@@ -86,8 +86,8 @@ const ResetIntentHandler = {
             attributes.times = 0;
             attributes.data3 = [];    
 
-        const speechText = 'Reset. In the menu, from the nation, club 1, club 2 or club 3, tap the screen or select by voice. <break time = "2s" /> ';
-        const reprompt2 = 'In menu, from the nation, club 1, club 2, club 3, please tap the screen or select by voice. <break time = "2s" />';
+        const speechText = 'Reset. In the menu, from the nation, club 1, club 2 or club 3, tap the screen or select by voice.<break time = "2s" /> ';
+        const reprompt2 = 'In menu, from the nation, club 1, club 2, club 3, please tap the screen or select by voice.<break time = "2s" />';
             
         return handlerInput.responseBuilder
         
