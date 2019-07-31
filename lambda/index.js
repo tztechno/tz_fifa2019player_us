@@ -782,8 +782,8 @@ const SelectNumberIntentHandler = {
         if (handlerInput.requestEnvelope.request.intent.slots.nation.value) {
 
             attributes.times = 4;              
-            let speechText = `ネイションを音声選択しました。<break time ="1s"/>国名をタップするか番号を言ってください。<break time ="2s"/>`  
-            const reprompt2 = '国名をタップするか番号を言ってください。<break time ="2s"/>'  
+            let speechText = `Selected nation by voice.<break time ="1s"/>Tap a country name or say a number.<break time ="2s"/>`  
+            const reprompt2 = 'Tap a country name or say a number.<break time ="2s"/>'  
             
             return handlerInput.responseBuilder
         
@@ -802,9 +802,9 @@ const SelectNumberIntentHandler = {
   　　　　
         if (times === 4) {
 
-       const speechTextIf = 'もう一度、国名をタップするか番号を言ってください。<break time ="2s"/>'  
+       const speechTextIf = 'Tap the country name or say the number again.<break time ="2s"/>'  
         
-            if( Num < 1 || Num > 164){
+            if( Num < 1 || Num > 164) {
       
         return handlerInput.responseBuilder
             .withShouldEndSession(false)                       
