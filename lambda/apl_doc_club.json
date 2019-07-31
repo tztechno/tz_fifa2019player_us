@@ -1,0 +1,65 @@
+{
+    "type": "APL",
+    "version": "1.0",
+    "theme": "dark",
+    "import": [{
+        "name": "alexa-layouts",
+        "version": "1.0.0"
+    }],
+    "mainTemplate": {
+        "parameters": [
+            "payload"
+        ],
+        "items": [{
+                "type": "Container",
+                "alignItems": "center",
+                "justifyContent": "center",
+                "height": "100vh",
+                "items": [{
+                        "type": "Text",
+                        "text": "FIFA 2019 PLAYER",
+                        "paddingTop": "10vh",
+                        "textAlign": "center",
+                        "color": "red",
+                        "fontSize": "30dp"
+                    },
+                    {
+                        "type": "Text",
+                        "text": "Club",
+                        "textAlign": "center",
+                        "color": "blue",
+                        "fontSize": "40dp"
+                    },
+                    {
+                        "type": "Sequence",
+                        "width": "100vw",
+                        "height": "100vh",
+                        "numbered": true,
+                        "grow": 1,
+                        "shrink": 1,
+                        "scrollDirection": "vertical",
+                        "data": "${payload.club_data.text}",
+                        "item": {
+                            "type": "TouchWrapper",
+                            "onPress": {
+                                "type": "SendEvent",
+                                "arguments": [
+                                    "${data}",
+                                    "${ordinal}"
+                                ]
+                            },
+                            "item": {
+                                "type": "Text",
+                                "text": "(${ordinal}) ${data}",
+                                "textAlign": "center",
+                                "textAlignVertical": "center",
+                                "fontWeight": "700"
+                            }
+                        }
+                    }
+                ]
+            }
+
+        ]
+    }
+}
