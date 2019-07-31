@@ -43,8 +43,7 @@ const LaunchRequestHandler = {
             attributes.times = 0;
             attributes.data3 = [];
             
-        const speechText = 'Welcome to FIFA 2019 PLAYER.<break time = "1s" /> Display the player\'s profile. \
-        Please select players by narrowing down from your country of origin or team name. Select Nation, Club 1, Club 2 or Club 3 by tapping the screen or by vocie.<break time = "2s" /> ';
+        const speechText = 'Welcome to FIFA 2019 PLAYER.<break time = "1s" /> Display the player\'s profile. Please select players by narrowing down from your country of origin or team name. Select Nation, Club 1, Club 2 or Club 3 by tapping the screen or by vocie.<break time = "2s" /> ';
         const reprompt2 = 'On the menu, from the nation, club 1, club 2, club 3, please tap the screen or select by voice.<break time = "2s" />';
         const speechText2 = 'Welcome to FIFA 2019 PLAYER. You need a screen device to use this skill. It can not be used with your device.<break time = "2s" /> ';
 
