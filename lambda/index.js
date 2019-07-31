@@ -818,8 +818,8 @@ const SelectNumberIntentHandler = {
         let nationclubs = apl_data_nationclub.nationclub_data.text.filter(dat => dat[0] === choice1e);
         let clubs = getCol(nationclubs, 1);
    
-        let speechText = `${choice1e}を音声選択しました。<break time ="1s"/>クラブ名をタップするか番号を言ってください。<break time ="2s"/>`  
-        const reprompt2 = 'クラブ名をタップするか番号を言ってください。<break time ="2s"/>'     
+        let speechText = `Select ${choice1e} by voice.<break time ="1s"/>Tap a club name or say a number.<break time ="2s"/>`  
+        const reprompt2 = 'Tap a club name or say a number.<break time ="2s"/>'     
         
             attributes.nationclubs = nationclubs  //nation
             attributes.nationclub = choice1e  //nation
@@ -908,7 +908,7 @@ const SelectNumberIntentHandler = {
 
         if (times === 5) {
             
-        const speechTextIf = 'もう一度、クラブ名をタップするか番号を言ってください。<break time ="2s"/>'  
+        const speechTextIf = 'Tap a club name or say number again.<break time ="2s"/>'  
         let nationclubs = attributes.nationclubs; 
         
             if( Num < 1 || Num > nationclubs.length ){
@@ -933,8 +933,8 @@ const SelectNumberIntentHandler = {
             attributes.times = 3;
             attributes.names = names;            
 
-        let speechText = `${choice1f}を音声選択しました。<break time ="1s"/>選手名をタップするか番号を言ってください。<break time ="2s"/>`  
-        const reprompt2 = '選手名をタップするか番号を言ってください。<break time ="2s"/>'  
+        let speechText = `Selected ${choice1f} by voice.<break time ="1s"/>Tap a player name or say a number.<break time ="2s"/>`  
+        const reprompt2 = 'Tap a player name or say a number.<break time ="2s"/>'  
         
         return handlerInput.responseBuilder
             .addDirective ({
@@ -1019,7 +1019,7 @@ const SelectNumberIntentHandler = {
 
         if (times === 1) {
             
-       const speechTextIf = 'もう一度、クラブ名をタップするか番号を言ってください。<break time ="2s"/>'  
+       const speechTextIf = 'Tap a club name or say number again.<break time ="2s"/>'  
         
             if( Num < 1 || Num > 651 ){
       
@@ -1039,8 +1039,8 @@ const SelectNumberIntentHandler = {
             attributes.clubnation = choice1b  //nation
             attributes.times = 2;   
             
-        let speechText = `${choice1b}を音声選択しました。<break time ="1s"/>国名をタップするか番号を言ってください。<break time ="2s"/>`  
-        const reprompt2 = '国名をタップするか番号を言ってください。<break time ="2s"/>'  
+        let speechText = `Selected ${choice1b} by voice.<break time ="1s"/>Tap a country name or say a number.<break time ="2s"/>`  
+        const reprompt2 = 'Tap a country name or say a number.<break time ="2s"/>'  
         
         return handlerInput.responseBuilder
             .addDirective ({
@@ -1125,7 +1125,7 @@ const SelectNumberIntentHandler = {
         
         if (times === 2) {
             
-       const speechTextIf = 'もう一度、国名をタップするか番号を言ってください。<break time ="2s"/>'  
+       const speechTextIf = 'Tap a country name or say a number again.<break time ="2s"/>'  
        let clubnations = attributes.clubnations;    
        
             if( Num < 1 || Num > clubnations.length ){
@@ -1152,8 +1152,8 @@ const SelectNumberIntentHandler = {
 
             data3 = attributes.data3;
             
-        let speechText = `${choice1c}を音声選択しました。<break time ="1s"/>選手名をタップするか番号を言ってください。<break time ="2s"/>`  
-        const reprompt2 = '選手名をタップするか番号を言ってください。<break time ="2s"/>'  
+        let speechText = `Selected ${choice1c} by voice.<break time ="1s"/>Tap a player name or say a number.<break time ="2s"/>`  
+        const reprompt2 = 'Tap a player name or say a number.<break time ="2s"/>'  
         
         return handlerInput.responseBuilder
             .addDirective ({
@@ -1238,7 +1238,7 @@ const SelectNumberIntentHandler = {
  
         if (times === 3) {
             
-       const speechTextIf = 'もう一度、選手名をタップするか番号を言ってください。<break time ="2s"/>'  
+       const speechTextIf = 'Please tap the player name or say the number again.<break time ="2s"/>'  
        let names = attributes.names;        
         
             if( Num < 1 || Num > names.length ){
@@ -1255,8 +1255,8 @@ const SelectNumberIntentHandler = {
         let choice1d = data4[Num-1][0];          
         let data5 = data4.filter(dat => dat[0] === choice1d);  // name   
 
-        let speechText = `${choice1d}を音声選択しました。<break time ="3s"/>もう一度始めるにはリセットと言って下さい。<break time ="2s"/>` 
-        const reprompt2 = '<break time ="3s"/>もう一度始めるにはリセットと言って下さい。<break time ="2s"/>' 
+        let speechText = `Selected ${choice1d} by voice.<break time ="3s"/>Say reset to start again.<break time ="2s"/>` 
+        const reprompt2 = '<break time ="3s"/>Say reset to start again.<break time ="2s"/>' 
         
         return handlerInput.responseBuilder
             .addDirective ({
@@ -1384,12 +1384,11 @@ const HelpIntentHandler = {
             && handlerInput.requestEnvelope.request.intent.name === 'AMAZON.HelpIntent';
     },
     handle(handlerInput) {
-        const speechText = 'FIFA2019選手データへようこそ。FIFA登録選手のプロフィールを表示するスキルです。メニュー画面から画面タッチで絞り込みを進めます。\
-        タッチの代わりに音声で絞り込みを進めることも可能です。出身国、所属チームで絞り込むと選手名のリストが表示されます。\
-        選手名を選択すると、選手のプロフィールが表示されます。まず、メニューで、ネイション、クラブ１、クラブ２、クラブ３から、\
-        画面をタップするか音声で選択して下さい。<break time ="2s"/>';
-        const reprompt2 = 'メニュー画面に移動するには、リセットあるいはメニューと言って下さい。メニューで、ネイション、クラブ１、クラブ２、クラブ３から、\
-        画面をタップするか音声で選択して下さい。<break time ="2s"/>' 
+        const speechText = 'Welcome to FIFA 2019 player data. It is a skill that displays the profile of FIFA registered players. \
+        From the menu screen, you can narrow down by touching the screen. It is also possible to advance the filtering by voice instead of touch. \
+        If you narrow down by country of origin and team, you will see a list of player names. Select a player name and the player\'s profile \
+        will be displayed. First, in the menu, from Nation, Club 1, Club 2, Club 3. Please tap the screen or select by voice.<break time ="2s"/>'
+        const reprompt2 = 'To go to the menu screen, say Reset or Menu. Please tap the screen or select by voice.<break time ="2s"/>' 
         
         return handlerInput.responseBuilder
             .speak(speechText)
@@ -1406,7 +1405,7 @@ const CancelAndStopIntentHandler = {
                 || handlerInput.requestEnvelope.request.intent.name === 'AMAZON.StopIntent');
     },
     handle(handlerInput) {
-        const speechText = 'ストップしました。';
+        const speechText = 'Stopped.';
         return handlerInput.responseBuilder
             .speak(speechText)
             .withShouldEndSession(true)            
@@ -1447,7 +1446,7 @@ const ErrorHandler = {
     },
     handle(handlerInput, error) {
         console.log(`~~~~ Error handled: ${error.message}`);
-        const speechText = "うまく聞き取れませんでした。";
+        const speechText = "did not hear well.";
 
         return handlerInput.responseBuilder
             .speak(speechText)
