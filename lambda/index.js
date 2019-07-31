@@ -43,10 +43,11 @@ const LaunchRequestHandler = {
             attributes.times = 0;
             attributes.data3 = [];
             
-        const speechText = 'FIFA 2019 PLAYERへようこそ。<break time ="1s"/>選手のプロフィールを表示します。出身国あるいは所属チーム名から絞り込んで選手を選んで下さい。\
-        初めに、メニューで、ネイション、クラブ１、クラブ２、クラブ３から、画面をタップするか音声で選択して下さい。<break time ="2s"/>';
-        const reprompt2 = 'メニューで、ネイション、クラブ１、クラブ２、クラブ３から、画面をタップするか音声で選択して下さい。<break time ="2s"/>'
-        const speechText2 = 'FIFA 2019 PLAYERへようこそ。このスキルを使用するには画面付きデバイスが必要です。今お使いのデバイスでは使用出来ません。<break time ="2s"/>';
+        const speechText = 'Welcome to the FIFA 2019 PLAYER. <break time = "1s" /> Display the player\'s profile. \
+        Please select players by narrowing down from your country of origin or team name. At the beginning, from the menu, select from \
+        the nation, Club 1, Club 2 and Club 3 by tapping the screen or by audio. <break time = "2s" /> ';
+        const reprompt2 = 'In menu, from the nation, club 1, club 2, club 3, please tap the screen or select by voice. <break time = "2s" />';
+        const speechText2 = 'Welcome to FIFA 2019 PLAYER. You need a screen device to use this skill. It can not be used with your device. <break time = "2s" /> ';
 
         if (Util.isAPLSupported(handlerInput.requestEnvelope)) {
         return handlerInput.responseBuilder
@@ -84,9 +85,10 @@ const ResetIntentHandler = {
         let attributes = handlerInput.attributesManager.getSessionAttributes();         
             attributes.times = 0;
             attributes.data3 = [];    
+
+        const speechText = 'Reset. In the menu, from the nation, club 1, club 2 or club 3, tap the screen or select by voice. <break time = "2s" /> ';
+        const reprompt2 = 'In menu, from the nation, club 1, club 2, club 3, please tap the screen or select by voice. <break time = "2s" />';
             
-        const speechText = 'リセットしました。メニューで、ネイション、クラブ１、クラブ２、クラブ３から、画面をタップするか音声で選択して下さい。<break time ="2s"/>';
-        const reprompt2 = 'メニューで、ネイション、クラブ１、クラブ２、クラブ３から、画面をタップするか音声で選択して下さい。<break time ="2s"/>'        
         return handlerInput.responseBuilder
         
             .addDirective ({
@@ -121,8 +123,8 @@ const TouchEventHandler = {
         if (choice1 === "Club1 (1,a-e)") {
             
             attributes.times = 1;              
-            let speechText = `クラブ１をタップしました。<break time ="1s"/>クラブ名をタップするか番号を言ってください。<break time ="2s"/>`  
-            const reprompt2 = 'クラブ名をタップするか番号を言ってください。<break time ="2s"/>'  
+            let speechText = `Tapped  Club 1.<break time = "1s" />Tap a club name or say a number.<break time ="2s"/>`  
+            const reprompt2 = 'Tap a club name or say a number.<break time ="2s"/>'  
             
             return handlerInput.responseBuilder
         
@@ -142,8 +144,8 @@ const TouchEventHandler = {
         if (choice1 === "Club2 (f-o)") {
             
             attributes.times = 1;              
-            let speechText = `クラブ２をタップしました。<break time ="1s"/>クラブ名をタップするか番号を言ってください。<break time ="2s"/>`  
-            const reprompt2 = 'クラブ名をタップするか番号を言ってください。<break time ="2s"/>'  
+            let speechText = `Tapped club 2.<break time ="1s"/>Tap a club name or say a number.<break time ="2s"/>`  
+            const reprompt2 = 'Tap a club name or say a number.。<break time ="2s"/>'  
             
             return handlerInput.responseBuilder
         
@@ -163,8 +165,8 @@ const TouchEventHandler = {
         if (choice1 === "Club3 (p-z)") {
             
             attributes.times = 1;              
-            let speechText = `クラブ３をタップしました。<break time ="1s"/>クラブ名をタップするか番号を言ってください。<break time ="2s"/>`  
-            const reprompt2 = 'クラブ名をタップするか番号を言ってください。<break time ="2s"/>'  
+            let speechText = `Tapped club 3.<break time ="1s"/>Tap a club name or say a number.<break time ="2s"/>`  
+            const reprompt2 = 'Tap a club name or say a number.<break time ="2s"/>'  
             
             return handlerInput.responseBuilder
         
@@ -184,8 +186,8 @@ const TouchEventHandler = {
         if (choice1 === "Nation") {
             
             attributes.times = 4;              
-            let speechText = `${choice1}をタップしました。<break time ="1s"/>国名をタップするか番号を言ってください。<break time ="2s"/>`  
-            const reprompt2 = '国名をタップするか番号を言ってください。<break time ="2s"/>'  
+            let speechText = `Tapped ${choice1}.<break time ="1s"/>Tap a country name or say a number.<break time ="2s"/>`  
+            const reprompt2 = 'Tap a country name or say a number.<break time ="2s"/>'  
             
             return handlerInput.responseBuilder
         
@@ -210,8 +212,8 @@ const TouchEventHandler = {
             attributes.nationclub = choice1  //nation
             attributes.times = 5;
             
-        let speechText = `${choice1}をタップしました。<break time ="1s"/>クラブ名をタップするか番号を言ってください。<break time ="2s"/>`  
-        const reprompt2 = 'クラブ名をタップするか番号を言ってください。<break time ="2s"/>'  
+        let speechText = `Tapped ${choice1}.<break time ="1s"/>Tap a club name or say a number.<break time ="2s"/>`  
+        const reprompt2 = 'Tap a club name or say a number.<break time ="2s"/>'  
             
         return handlerInput.responseBuilder
             .addDirective ({
@@ -303,8 +305,8 @@ const TouchEventHandler = {
             attributes.data4 = data4;
             attributes.times = 3;
             
-        let speechText = `${choice1}をタップしました。<break time ="1s"/>選手名をタップするか番号を言ってください。<break time ="2s"/>`  
-        const reprompt2 = '選手名をタップするか番号を言ってください。<break time ="2s"/>'   
+        let speechText = `Tapped ${choice1}.<break time ="1s"/>Tap a player name or say a number.<break time ="2s"/>`  
+        const reprompt2 = 'Tap a player name or say a number.<break time ="2s"/>'   
         
         return handlerInput.responseBuilder
             .addDirective ({
@@ -394,8 +396,8 @@ const TouchEventHandler = {
             attributes.clubnation = choice1  //club
             attributes.times = 2;            
             
-        let speechText = `${choice1}をタップしました。<break time ="1s"/>国名をタップするか番号を言ってください。<break time ="2s"/>`  
-        const reprompt2 = '国名をタップするか番号を言ってください。<break time ="2s"/>'   
+        let speechText = `Tapped ${choice1}.<break time ="1s"/>Tap a country name or say a number.<break time ="2s"/>`  
+        const reprompt2 = 'Tap a country name or say a number.<break time ="2s"/>'   
         
         return handlerInput.responseBuilder
             .addDirective ({
@@ -486,8 +488,8 @@ const TouchEventHandler = {
             attributes.data4 = data4;
             attributes.times = 3;   
             
-        let speechText = `${choice1}をタップしました。<break time ="1s"/>選手名をタップするか番号を言ってください。<break time ="2s"/>`  
-        const reprompt2 = '選手名をタップするか番号を言ってください。<break time ="2s"/>'   
+        let speechText = `Tapped ${choice1}.<break time ="1s"/>Tap a player name or say a number.<break time ="2s"/>`  
+        const reprompt2 = 'Tap a player name or say a number.<break time ="2s"/>'   
         
         return handlerInput.responseBuilder
             .addDirective ({
@@ -574,8 +576,8 @@ const TouchEventHandler = {
         let data4 = attributes.data4;
         let data5 = data4.filter(dat => dat[0] === choice1);  // name   
         
-        let speechText = `${choice1}をタップしました。<break time ="3s"/>もう一度始めるにはリセットと言って下さい。<break time ="2s"/>` 
-        const reprompt2 = '<break time ="3s"/>もう一度始めるにはリセットと言って下さい。<break time ="2s"/>'   
+        let speechText = `Tapped ${choice1}.<break time ="3s"/>Say reset to start again.<break time ="2s"/>` 
+        const reprompt2 = '<break time ="3s"/>Say reset to start again.<break time ="2s"/>'   
         
         return handlerInput.responseBuilder
             .addDirective ({
@@ -716,8 +718,8 @@ const SelectNumberIntentHandler = {
         if (handlerInput.requestEnvelope.request.intent.slots.club_one.value) {
 
             attributes.times = 1;              
-            let speechText = `クラブ１を音声選択しました。<break time ="1s"/>クラブ名をタップするか番号を言ってください。<break time ="2s"/>`  
-            const reprompt2 = 'クラブ名をタップするか番号を言ってください。<break time ="2s"/>'  
+            let speechText = `Selected Club 1 by voice.<break time ="1s"/>Tap a club name or say a number.<break time ="2s"/>`  
+            const reprompt2 = 'Tap a club name or say a number.<break time ="2s"/>'  
         
             return handlerInput.responseBuilder
         
@@ -738,8 +740,8 @@ const SelectNumberIntentHandler = {
         if (handlerInput.requestEnvelope.request.intent.slots.club_two.value) {
 
             attributes.times = 1;              
-            let speechText = `クラブ２を音声選択しました。<break time ="1s"/>クラブ名をタップするか番号を言ってください。<break time ="2s"/>`  
-            const reprompt2 = 'クラブ名をタップするか番号を言ってください。<break time ="2s"/>'  
+            let speechText = `Selected Club 2 by voice.<break time ="1s"/>Tap a club name or say a number.<break time ="2s"/>`  
+            const reprompt2 = 'Tap a club name or say a number.<break time ="2s"/>'  
         
             return handlerInput.responseBuilder
         
@@ -759,8 +761,8 @@ const SelectNumberIntentHandler = {
         if (handlerInput.requestEnvelope.request.intent.slots.club_three.value) {
 
             attributes.times = 1;              
-            let speechText = `クラブ３を音声選択しました。<break time ="1s"/>クラブ名をタップするか番号を言ってください。<break time ="2s"/>`  
-            const reprompt2 = 'クラブ名をタップするか番号を言ってください。<break time ="2s"/>'  
+            let speechText = `Selected Club 3 by voice.<break time ="1s"/>Tap a club name or say a number.<break time ="2s"/>`  
+            const reprompt2 = 'Tap a club name or say a number.<break time ="2s"/>'  
         
             return handlerInput.responseBuilder
         
