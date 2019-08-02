@@ -45,8 +45,8 @@ const LaunchRequestHandler = {
             
         const speechText = 'Welcome to FIFA 2019 PLAYER. <break time = "1s" /> Let\'s display your favorite player\'s profile. \
                             Please select a player by chossing the nation or the team. \
-                            First, select Nation, Club 1, Club 2 or Club 3 by tapping or by your vocie.<break time = "2s" />';
-        const reprompt2 = 'Select Nation, Club 1, Club 2 or Club 3 by tapping or by your vocie. <break time = "2s" />';
+                            First, select Nation, Club 1, Club 2 or Club 3 by tapping or by vocie.<break time = "2s" />';
+        const reprompt2 = 'Select Nation, Club 1, Club 2 or Club 3 by tapping or by vocie. <break time = "2s" />';
         const speechText2 = 'Welcome to FIFA 2019 PLAYER. Sorry. This skill is available with a display_attached device.';
 
         if (Util.isAPLSupported(handlerInput.requestEnvelope)) {
@@ -86,8 +86,8 @@ const ResetIntentHandler = {
             attributes.times = 0;
             attributes.data3 = [];    
 
-        const speechText = 'Reset done. Select Nation, Club 1, Club 2 or Club 3 by tapping or by your vocie.<break time = "2s" />';
-        const reprompt2 = 'Select Nation, Club 1, Club 2 or Club 3 by tapping or by your vocie.<break time = "2s" />';
+        const speechText = 'Reset done. Select Nation, Club 1, Club 2 or Club 3 by tapping or by vocie.<break time = "2s" />';
+        const reprompt2 = 'Select Nation, Club 1, Club 2 or Club 3 by tapping or by vocie.<break time = "2s" />';
             
         return handlerInput.responseBuilder
         
@@ -1385,8 +1385,8 @@ const HelpIntentHandler = {
     },
     handle(handlerInput) {
         const speechText = 'Welcome to FIFA 2019 player. This skill shows the profile of your favorite FIFA player. \
-                        Please slect a nation and a team. Then, select a player.  The player\'s profile will be displayed. \
-                        First, please tap the screen or select Nation, Club 1, Club 2 or Club 3 by voice.<break time ="2s"/>'
+                            Please slect a nation and a team. Then, select a player.  The player\'s profile will be displayed. \
+                            First, please tap the screen or select Nation, Club 1, Club 2 or Club 3 by voice.<break time ="2s"/>'
         const reprompt2 = 'To go back to the start menu, please say Reset or Menu. Please tap the screen or select by voice.<break time ="2s"/>' 
         
         return handlerInput.responseBuilder
