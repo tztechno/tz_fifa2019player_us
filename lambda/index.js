@@ -43,9 +43,11 @@ const LaunchRequestHandler = {
             attributes.times = 0;
             attributes.data3 = [];
             
-        const speechText = 'Welcome to FIFA 2019 PLAYER.<break time = "1s" /> Display the player\'s profile. Please select players by narrowing down from your country of origin or team name. Select Nation, Club 1, Club 2 or Club 3 by tapping the screen or by vocie.<break time = "2s" /> ';
-        const reprompt2 = 'On the menu, from the nation, club 1, club 2, club 3, please tap the screen or select by voice.<break time = "2s" />';
-        const speechText2 = 'Welcome to FIFA 2019 PLAYER. You need a screen device to use this skill. It can not be used with your device.<break time = "2s" /> ';
+        const speechText = 'Welcome to FIFA 2019 PLAYER. <break time = "1s" /> Let\'s display your favorite player\'s profile. \
+                            Please select a player by chossing the nation or the team. \
+                            First, select Nation, Club 1, Club 2 or Club 3 by tapping or by your vocie.<break time = "2s" /> ';
+        const reprompt2 = 'Select Nation, Club 1, Club 2 or Club 3 by tapping or by your vocie. <break time = "2s" />';
+        const speechText2 = 'Welcome to FIFA 2019 PLAYER. Sorry. This skill is available with a display_attached device. <break time = "2s" /> ';
 
         if (Util.isAPLSupported(handlerInput.requestEnvelope)) {
         return handlerInput.responseBuilder
@@ -84,8 +86,8 @@ const ResetIntentHandler = {
             attributes.times = 0;
             attributes.data3 = [];    
 
-        const speechText = 'Reset. In the menu, tap the screen or select the nation, club 1, club 2 or club 3 by voice.<break time = "2s" /> ';
-        const reprompt2 = 'In the menu, tap the screen or select the nation, club 1, club 2 or club 3 by voice.<break time = "2s" />';
+        const speechText = 'Reset done. Select Nation, Club 1, Club 2 or Club 3 by tapping or by your vocie.<break time = "2s" /> ';
+        const reprompt2 = 'Select Nation, Club 1, Club 2 or Club 3 by tapping or by your vocie.<break time = "2s" />';
             
         return handlerInput.responseBuilder
         
@@ -121,8 +123,8 @@ const TouchEventHandler = {
         if (choice1 === "Club1 (1,a-e)") {
             
             attributes.times = 1;              
-            let speechText = `Tapped Club 1.<break time = "1s" />Tap a club or say number.<break time ="2s"/>`  
-            const reprompt2 = 'Tap a club or say number.<break time ="2s"/>'  
+            let speechText = `Club 1 tapped.<break time = "1s" />Please tap a club or say number.<break time ="2s"/>`  
+            const reprompt2 = 'Please tap a club or say number.<break time ="2s"/>'  
             
             return handlerInput.responseBuilder
         
@@ -142,8 +144,8 @@ const TouchEventHandler = {
         if (choice1 === "Club2 (f-o)") {
             
             attributes.times = 1;              
-            let speechText = `Tapped club 2.<break time ="1s"/> Tap a club or say number.<break time ="2s"/>`  
-            const reprompt2 = 'Tap a club or say number.<break time ="2s"/>'  
+            let speechText = `Club 2 tapped.<break time ="1s"/> Please tap a club or say number.<break time ="2s"/>`  
+            const reprompt2 = 'Please tap a club or say number.<break time ="2s"/>'  
             
             return handlerInput.responseBuilder
         
@@ -163,8 +165,8 @@ const TouchEventHandler = {
         if (choice1 === "Club3 (p-z)") {
             
             attributes.times = 1;              
-            let speechText = `Tapped club 3.<break time ="1s"/> Tap a club or say number.<break time ="2s"/>`  
-            const reprompt2 = 'Tap a club or say number.<break time ="2s"/>'  
+            let speechText = `Club 3 tapped.<break time ="1s"/> Please tap a club or say number.<break time ="2s"/>`  
+            const reprompt2 = 'Please tap a club or say number.<break time ="2s"/>'  
             
             return handlerInput.responseBuilder
         
@@ -184,8 +186,8 @@ const TouchEventHandler = {
         if (choice1 === "Nation") {
             
             attributes.times = 4;              
-            let speechText = `Tapped ${choice1}.<break time ="1s"/> Tap a nation or say number.<break time ="2s"/>`  
-            const reprompt2 = 'Tap a nation or say number.<break time ="2s"/>'  
+            let speechText = `${choice1} tapped.<break time ="1s"/> Please tap a nation or say number.<break time ="2s"/>`  
+            const reprompt2 = 'Please tap a nation or say number.<break time ="2s"/>'  
             
             return handlerInput.responseBuilder
         
@@ -210,8 +212,8 @@ const TouchEventHandler = {
             attributes.nationclub = choice1  //nation
             attributes.times = 5;
             
-        let speechText = `Tapped ${choice1}.<break time ="1s"/> Tap a club or say number.<break time ="2s"/>`  
-        const reprompt2 = 'Tap a club or say number.<break time ="2s"/>'  
+        let speechText = `${choice1} tapped.<break time ="1s"/> Please tap a club or say number.<break time ="2s"/>`  
+        const reprompt2 = 'Please tap a club or say number.<break time ="2s"/>'  
             
         return handlerInput.responseBuilder
             .addDirective ({
@@ -303,8 +305,8 @@ const TouchEventHandler = {
             attributes.data4 = data4;
             attributes.times = 3;
             
-        let speechText = `Tapped ${choice1}.<break time ="1s"/> Tap a player or say number.<break time ="2s"/>`  
-        const reprompt2 = 'Tap a player or say number.<break time ="2s"/>'   
+        let speechText = `${choice1} tapped.<break time ="1s"/> Please tap a player or say number.<break time ="2s"/>`  
+        const reprompt2 = 'Please tap a player or say number.<break time ="2s"/>'   
         
         return handlerInput.responseBuilder
             .addDirective ({
@@ -394,8 +396,8 @@ const TouchEventHandler = {
             attributes.clubnation = choice1  //club
             attributes.times = 2;            
             
-        let speechText = `Tapped ${choice1}.<break time ="1s"/> Tap a nation or say number.<break time ="2s"/>`  
-        const reprompt2 = 'Tap a nation or say number.<break time ="2s"/>'   
+        let speechText = `${choice1} tapped.<break time ="1s"/> Please tap a nation or say number.<break time ="2s"/>`  
+        const reprompt2 = 'Please tap a nation or say number.<break time ="2s"/>'   
         
         return handlerInput.responseBuilder
             .addDirective ({
@@ -486,8 +488,8 @@ const TouchEventHandler = {
             attributes.data4 = data4;
             attributes.times = 3;   
             
-        let speechText = `Tapped ${choice1}.<break time ="1s"/> Tap a player or say number.<break time ="2s"/>`  
-        const reprompt2 = 'Tap a player or say number.<break time ="2s"/>'   
+        let speechText = `${choice1} tapped.<break time ="1s"/> Please tap a player or say number.<break time ="2s"/>`  
+        const reprompt2 = 'Please tap a player or say number.<break time ="2s"/>'   
         
         return handlerInput.responseBuilder
             .addDirective ({
@@ -574,8 +576,8 @@ const TouchEventHandler = {
         let data4 = attributes.data4;
         let data5 = data4.filter(dat => dat[0] === choice1);  // name   
         
-        let speechText = `Tapped ${choice1}.<break time ="3s"/> Say reset to start again.<break time ="2s"/>` 
-        const reprompt2 = 'Say reset to start again.<break time ="2s"/>'   
+        let speechText = `${choice1} tapped.<break time ="3s"/> Please say reset to start again.<break time ="2s"/>` 
+        const reprompt2 = 'Please say reset to start again.<break time ="2s"/>'   
         
         return handlerInput.responseBuilder
             .addDirective ({
@@ -716,8 +718,8 @@ const SelectNumberIntentHandler = {
         if (handlerInput.requestEnvelope.request.intent.slots.club_one.value) {
 
             attributes.times = 1;              
-            let speechText = `Selected Club 1 by voice.<break time ="1s"/> Tap a club or say number.<break time ="2s"/>`  
-            const reprompt2 = 'Tap a club or say number.<break time ="2s"/>'  
+            let speechText = `Club 1 selected by voice.<break time ="1s"/> Please tap a club or say number.<break time ="2s"/>`  
+            const reprompt2 = 'Please tap a club or say number.<break time ="2s"/>'  
         
             return handlerInput.responseBuilder
         
@@ -738,8 +740,8 @@ const SelectNumberIntentHandler = {
         if (handlerInput.requestEnvelope.request.intent.slots.club_two.value) {
 
             attributes.times = 1;              
-            let speechText = `Selected Club 2 by voice.<break time ="1s"/> Tap a club or say number.<break time ="2s"/>`  
-            const reprompt2 = 'Tap a club or say number.<break time ="2s"/>'  
+            let speechText = `Club 2 selected by voice.<break time ="1s"/> Please tap a club or say number.<break time ="2s"/>`  
+            const reprompt2 = 'Please tap a club or say number.<break time ="2s"/>'  
         
             return handlerInput.responseBuilder
         
@@ -759,8 +761,8 @@ const SelectNumberIntentHandler = {
         if (handlerInput.requestEnvelope.request.intent.slots.club_three.value) {
 
             attributes.times = 1;              
-            let speechText = `Selected Club 3 by voice.<break time ="1s"/> Tap a club or say number.<break time ="2s"/>`  
-            const reprompt2 = 'Tap a club or say number.<break time ="2s"/>'  
+            let speechText = `Club 3 selected by voice.<break time ="1s"/> Please tap a club or say number.<break time ="2s"/>`  
+            const reprompt2 = 'Please tap a club or say number.<break time ="2s"/>'  
         
             return handlerInput.responseBuilder
         
@@ -780,8 +782,8 @@ const SelectNumberIntentHandler = {
         if (handlerInput.requestEnvelope.request.intent.slots.nation.value) {
 
             attributes.times = 4;              
-            let speechText = `Selected nation by voice.<break time ="1s"/> Tap a nation or say number.<break time ="2s"/>`  
-            const reprompt2 = 'Tap a nation or say number.<break time ="2s"/>'  
+            let speechText = `Nation selected by voice.<break time ="1s"/> Please tap a nation or say number.<break time ="2s"/>`  
+            const reprompt2 = 'Please tap a nation or say number.<break time ="2s"/>'  
             
             return handlerInput.responseBuilder
         
@@ -800,7 +802,7 @@ const SelectNumberIntentHandler = {
   　　　　
         if (times === 4) {
 
-       const speechTextIf = 'Tap a nation or say number again.<break time ="2s"/>'  
+       const speechTextIf = 'Please tap a nation or say number again.<break time ="2s"/>'  
         
             if( Num < 1 || Num > 164) {
       
@@ -816,8 +818,8 @@ const SelectNumberIntentHandler = {
         let nationclubs = apl_data_nationclub.nationclub_data.text.filter(dat => dat[0] === choice1e);
         let clubs = getCol(nationclubs, 1);
    
-        let speechText = `Select ${choice1e} by voice.<break time ="1s"/> Tap a club or say number.<break time ="2s"/>`  
-        const reprompt2 = 'Tap a club or say number.<break time ="2s"/>'     
+        let speechText = `${choice1e} selected by voice.<break time ="1s"/> Please tap a club or say number.<break time ="2s"/>`  
+        const reprompt2 = 'Please tap a club or say number.<break time ="2s"/>'     
         
             attributes.nationclubs = nationclubs  //nation
             attributes.nationclub = choice1e  //nation
@@ -906,7 +908,7 @@ const SelectNumberIntentHandler = {
 
         if (times === 5) {
             
-        const speechTextIf = 'Tap a club or say number again.<break time ="2s"/>'  
+        const speechTextIf = 'Please tap a club or say number again.<break time ="2s"/>'  
         let nationclubs = attributes.nationclubs; 
         
             if( Num < 1 || Num > nationclubs.length ){
@@ -931,8 +933,8 @@ const SelectNumberIntentHandler = {
             attributes.times = 3;
             attributes.names = names;            
 
-        let speechText = `Selected ${choice1f} by voice.<break time ="1s"/>Tap a player or say number.<break time ="2s"/>`  
-        const reprompt2 = 'Tap a player or say number.<break time ="2s"/>'  
+        let speechText = `${choice1f} selected by voice.<break time ="1s"/>Please tap a player or say number.<break time ="2s"/>`  
+        const reprompt2 = 'Please tap a player or say number.<break time ="2s"/>'  
         
         return handlerInput.responseBuilder
             .addDirective ({
@@ -1017,7 +1019,7 @@ const SelectNumberIntentHandler = {
 
         if (times === 1) {
             
-       const speechTextIf = 'Tap a club or say number again.<break time ="2s"/>'  
+       const speechTextIf = 'Please tap a club or say number again.<break time ="2s"/>'  
         
             if( Num < 1 || Num > 651 ){
       
@@ -1037,8 +1039,8 @@ const SelectNumberIntentHandler = {
             attributes.clubnation = choice1b  //nation
             attributes.times = 2;   
             
-        let speechText = `Selected ${choice1b} by voice.<break time ="1s"/>Tap a nation or say number.<break time ="2s"/>`  
-        const reprompt2 = 'Tap a nation or say number.<break time ="2s"/>'  
+        let speechText = `${choice1b} selected by voice.<break time ="1s"/>Please tap a nation or say number.<break time ="2s"/>`  
+        const reprompt2 = 'Please tap a nation or say number.<break time ="2s"/>'  
         
         return handlerInput.responseBuilder
             .addDirective ({
@@ -1123,7 +1125,7 @@ const SelectNumberIntentHandler = {
         
         if (times === 2) {
             
-       const speechTextIf = 'Tap a nation or say number again.<break time ="2s"/>'  
+       const speechTextIf = 'Please tap a nation or say number again.<break time ="2s"/>'  
        let clubnations = attributes.clubnations;    
        
             if( Num < 1 || Num > clubnations.length ){
@@ -1150,8 +1152,8 @@ const SelectNumberIntentHandler = {
 
             data3 = attributes.data3;
             
-        let speechText = `Selected ${choice1c} by voice.<break time ="1s"/>Tap a player or say number.<break time ="2s"/>`  
-        const reprompt2 = 'Tap a player or say number.<break time ="2s"/>'  
+        let speechText = `${choice1c} selected by voice.<break time ="1s"/>Please tap a player or say number.<break time ="2s"/>`  
+        const reprompt2 = 'Please tap a player or say number.<break time ="2s"/>'  
         
         return handlerInput.responseBuilder
             .addDirective ({
@@ -1236,7 +1238,7 @@ const SelectNumberIntentHandler = {
  
         if (times === 3) {
             
-       const speechTextIf = 'Tap a player or say number again.<break time ="2s"/>'  
+       const speechTextIf = 'Please tap a player or say number again.<break time ="2s"/>'  
        let names = attributes.names;        
         
             if( Num < 1 || Num > names.length ){
@@ -1253,8 +1255,8 @@ const SelectNumberIntentHandler = {
         let choice1d = data4[Num-1][0];          
         let data5 = data4.filter(dat => dat[0] === choice1d);  // name   
 
-        let speechText = `Selected ${choice1d} by voice.<break time ="3s"/>Say reset to start again.<break time ="2s"/>` 
-        const reprompt2 = '<break time ="3s"/>Say reset to start again.<break time ="2s"/>' 
+        let speechText = `${choice1d} selected by voice.<break time ="3s"/>Please say reset to start again.<break time ="2s"/>` 
+        const reprompt2 = 'Please say reset to start again.<break time ="2s"/>' 
         
         return handlerInput.responseBuilder
             .addDirective ({
@@ -1382,11 +1384,10 @@ const HelpIntentHandler = {
             && handlerInput.requestEnvelope.request.intent.name === 'AMAZON.HelpIntent';
     },
     handle(handlerInput) {
-        const speechText = 'Welcome to FIFA 2019 player data. This skill displays the profile of FIFA players. \
-        You can search your favorite player by touching the screen or voice. \
-        If you narrow down by country of origin and team, you will see a list of player names. Select a player and the player\'s profile \
-        will be displayed. First, please tap the screen or select Nation, Club 1, Club 2 or Club 3 by voice.<break time ="2s"/>'
-        const reprompt2 = 'To go to the menu screen, say Reset or Menu. Please tap the screen or select by voice.<break time ="2s"/>' 
+        const speechText = 'Welcome to FIFA 2019 player. This skill shows the profile of your favorite FIFA player. \
+                        Please slect a nation and a team. Then, select a player.  The player\'s profile will be displayed. \
+                        First, please tap the screen or select Nation, Club 1, Club 2 or Club 3 by voice.<break time ="2s"/>'
+        const reprompt2 = 'To go back to the start menu, please say Reset or Menu. Please tap the screen or select by voice.<break time ="2s"/>' 
         
         return handlerInput.responseBuilder
             .speak(speechText)
