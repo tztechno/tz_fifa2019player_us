@@ -47,7 +47,7 @@ const LaunchRequestHandler = {
                             Please select a player by chossing the nation or the team. \
                             First, select Nation, Club 1, Club 2 or Club 3 by tapping or by your vocie.<break time = "2s" /> ';
         const reprompt2 = 'Select Nation, Club 1, Club 2 or Club 3 by tapping or by your vocie. <break time = "2s" />';
-        const speechText2 = 'Welcome to FIFA 2019 PLAYER. Sorry. This skill is available with a display_attached device. <break time = "2s" /> ';
+        const speechText2 = 'Welcome to FIFA 2019 PLAYER. Sorry. This skill is available with a display_attached device.';
 
         if (Util.isAPLSupported(handlerInput.requestEnvelope)) {
         return handlerInput.responseBuilder
