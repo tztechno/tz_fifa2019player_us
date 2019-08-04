@@ -1378,7 +1378,6 @@ const SelectNumberIntentHandler = {
     }     　
     }
     
-
         if ((times === 0) && ( !(handlerInput.requestEnvelope.request.intent.slots.club_one.value) || !(handlerInput.requestEnvelope.request.intent.slots.club_two.value)  || !(handlerInput.requestEnvelope.request.intent.slots.club_three.value))) {
             
         const speechTextIf = 'Out of menu items. Please select an item by tapping or by voice, again'        
