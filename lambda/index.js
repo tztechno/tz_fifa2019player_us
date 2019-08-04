@@ -45,8 +45,8 @@ const LaunchRequestHandler = {
             
         const speechText = 'Welcome to FIFA 2019 PLAYER. <break time = "1s" /> Let\'s display your favorite player\'s profile. \
                             Please select a player by choosing the nation or the team. \
-                            First, select Nation, Club 1, Club 2 or Club 3 by tapping or by vocie.';
-        const reprompt2 = 'Select Nation, Club 1, Club 2 or Club 3 by tapping or by vocie. ';
+                            First, select Nation, Club 1, Club 2 or Club 3 by tapping or by voice.';
+        const reprompt2 = 'Select Nation, Club 1, Club 2 or Club 3 by tapping or by voice. ';
         const speechText2 = 'Welcome to FIFA 2019 PLAYER. Sorry. This skill is available with a display_attached device.';
 
         if (Util.isAPLSupported(handlerInput.requestEnvelope)) {
@@ -86,8 +86,8 @@ const ResetIntentHandler = {
             attributes.times = 0;
             attributes.data3 = [];    
 
-        const speechText = 'Reset done. Please select Nation, Club 1, Club 2 or Club 3 by tapping or by vocie.';
-        const reprompt2 = 'Please select Nation, Club 1, Club 2 or Club 3 by tapping or by vocie.';
+        const speechText = 'Reset done. Please select Nation, Club 1, Club 2 or Club 3 by tapping or by voice.';
+        const reprompt2 = 'Please select Nation, Club 1, Club 2 or Club 3 by tapping or by voice.';
             
         return handlerInput.responseBuilder
         
@@ -785,7 +785,7 @@ const SelectNumberIntentHandler = {
 
         if( !(handlerInput.requestEnvelope.request.intent.slots.club_one.value) || !(handlerInput.requestEnvelope.request.intent.slots.club_two.value)  || !(handlerInput.requestEnvelope.request.intent.slots.club_three.value) ) {
             
-        const speechTextIf = 'Please select Nation, Club 1, Club 2 or Club 3 by tapping or by vocie, again'        
+        const speechTextIf = 'Please select Nation, Club 1, Club 2 or Club 3 by tapping or by voice, again'        
         return handlerInput.responseBuilder
             .withShouldEndSession(false)                       
             .speak(speechTextIf)
