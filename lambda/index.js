@@ -783,7 +783,17 @@ const SelectNumberIntentHandler = {
             .getResponse()              
   　}  
 
- //       if (handlerInput.requestEnvelope.request.intent.slots.club_three.valuehandlerInput.requestEnvelope.request.intent.slots.club_three.valuehandlerInput.requestEnvelope.request.intent.slots.club_three.value) {
+        if( !(handlerInput.requestEnvelope.request.intent.slots.club_one.value) || !(handlerInput.requestEnvelope.request.intent.slots.club_two.value)  || !(handlerInput.requestEnvelope.request.intent.slots.club_three.value) ) {
+            
+        const speechTextIf = 'Please tap a nation or say number again.'        
+        return handlerInput.responseBuilder
+            .withShouldEndSession(false)                       
+            .speak(speechTextIf)
+            .reprompt(speechTextIf)   
+            .getResponse()           
+           
+        } 
+
 
         if (handlerInput.requestEnvelope.request.intent.slots.nation.value) {
 
