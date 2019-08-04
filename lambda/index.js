@@ -1141,7 +1141,6 @@ const SelectNumberIntentHandler = {
            
         } else{            
        
-
         let clubnation = attributes.clubnation;
         let choice1c = clubnations[Num-1][0]; 
         
@@ -1236,7 +1235,7 @@ const SelectNumberIntentHandler = {
             .speak(speechText)
             .reprompt(reprompt2)         
             .getResponse()              
-    }
+            }
         }
  
         if (times === 3) {
