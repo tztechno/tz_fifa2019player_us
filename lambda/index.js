@@ -209,6 +209,7 @@ const TouchEventHandler = {
         let nationclubs = apl_data_nationclub.nationclub_data.text.filter(dat => dat[0] === choice1);
         let clubs = getCol(nationclubs, 1);
         
+            attributes.nationclubs = nationclubs        
             attributes.nationclub = choice1  //nation
             attributes.times = 5;
             
@@ -302,6 +303,7 @@ const TouchEventHandler = {
         let data4 = data3.filter(dat => dat[3] === nationclub);  // nation      
         let names = getCol(data4, 0);  //クラブ・国絞り込みの選手リスト
         
+            attributes.names = names;
             attributes.data4 = data4;
             attributes.times = 3;
             
@@ -393,6 +395,7 @@ const TouchEventHandler = {
         let clubnations = apl_data_nationclub.nationclub_data.text.filter(dat => dat[1] === choice1);
         let nations = getCol(clubnations, 0);
           
+            attributes.clubnations = clubnations 
             attributes.clubnation = choice1  //club
             attributes.times = 2;            
             
@@ -484,7 +487,8 @@ const TouchEventHandler = {
         let data3 = data2.filter(dat => dat[6] === clubnation);  // club                  
         let data4 = data3.filter(dat => dat[3] === choice1);  // nation      
         let names = getCol(data4, 0);  //クラブ・国絞り込みの選手リスト
-        
+
+            attributes.names = names;        
             attributes.data4 = data4;
             attributes.times = 3;   
             
@@ -921,7 +925,6 @@ const SelectNumberIntentHandler = {
            
         } else{           
             
- 
         let nationclub = attributes.nationclub;
         let choice1f = nationclubs[Num-1][1]; 
         
