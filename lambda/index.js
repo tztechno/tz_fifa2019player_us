@@ -783,6 +783,8 @@ const SelectNumberIntentHandler = {
             .getResponse()              
   　}  
 
+        if (handlerInput.requestEnvelope.request.intent.slots.club_three.value) {
+
         if (handlerInput.requestEnvelope.request.intent.slots.nation.value) {
 
             attributes.times = 4;              
@@ -804,6 +806,7 @@ const SelectNumberIntentHandler = {
             .getResponse()              
   　} 
   　　　　
+
         if (times === 4) {
 
        const speechTextIf = 'Please tap a nation or say number again.'  
