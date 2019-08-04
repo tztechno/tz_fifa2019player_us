@@ -44,7 +44,7 @@ const LaunchRequestHandler = {
             attributes.data3 = [];
             
         const speechText = 'Welcome to FIFA 2019 PLAYER. <break time = "1s" /> Let\'s display your favorite player\'s profile. \
-                            Please select a player by chossing the nation or the team. \
+                            Please select a player by choosing the nation or the team. \
                             First, select Nation, Club 1, Club 2 or Club 3 by tapping or by vocie.';
         const reprompt2 = 'Select Nation, Club 1, Club 2 or Club 3 by tapping or by vocie. ';
         const speechText2 = 'Welcome to FIFA 2019 PLAYER. Sorry. This skill is available with a display_attached device.';
