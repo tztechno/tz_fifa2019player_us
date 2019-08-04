@@ -785,7 +785,7 @@ const SelectNumberIntentHandler = {
 
         if( !(handlerInput.requestEnvelope.request.intent.slots.club_one.value) || !(handlerInput.requestEnvelope.request.intent.slots.club_two.value)  || !(handlerInput.requestEnvelope.request.intent.slots.club_three.value) ) {
             
-        const speechTextIf = 'Please select Nation, Club 1, Club 2 or Club 3 by tapping or by voice, again'        
+        const speechTextIf = 'Out of menu items. Please select Nation, Club 1, Club 2 or Club 3 by tapping or by voice, again'        
         return handlerInput.responseBuilder
             .withShouldEndSession(false)                       
             .speak(speechTextIf)
