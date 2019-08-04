@@ -1376,7 +1376,7 @@ const SelectNumberIntentHandler = {
             .getResponse()              
                     
     }     　
-    },
+    }
     
 
         if ((times === 0) && ( !(handlerInput.requestEnvelope.request.intent.slots.club_one.value) || !(handlerInput.requestEnvelope.request.intent.slots.club_two.value)  || !(handlerInput.requestEnvelope.request.intent.slots.club_three.value))) {
