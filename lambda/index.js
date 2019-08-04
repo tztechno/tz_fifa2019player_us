@@ -783,7 +783,7 @@ const SelectNumberIntentHandler = {
             .getResponse()              
   　}  
 
-        if (handlerInput.requestEnvelope.request.intent.slots.club_three.value) {
+        if (handlerInput.requestEnvelope.request.intent.slots.club_three.valuehandlerInput.requestEnvelope.request.intent.slots.club_three.valuehandlerInput.requestEnvelope.request.intent.slots.club_three.value) {
 
         if (handlerInput.requestEnvelope.request.intent.slots.nation.value) {
 
