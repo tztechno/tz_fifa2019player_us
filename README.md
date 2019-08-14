@@ -1,9 +1,9 @@
 
-##### [Alexa Skill Name]: 
+##### [Alexa Skill] 
 ## FIFA 2019 PLAYER (unofficial) 
 [https://amzn.to/2ZRza0Y](https://amzn.to/2ZRza0Y)
-##### [Call Name]: favorite football players
-##### [Note]: This skill is not officially endorsed or sponsored by FIFA, it is non-formal or non-approved skill.
+[Call Name]: favorite football players
+[Note]: This skill is not officially endorsed or sponsored by FIFA, it is non-formal or non-approved skill.
 
 ## Overview
 This skill shows the profile of your favorite FIFA football players (FIFA unofficial / non-certified).
