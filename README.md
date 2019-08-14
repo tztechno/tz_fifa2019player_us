@@ -12,7 +12,7 @@ Select a nation, a club, and a player, the player's profile (face, age, potentia
 
 ## Operation Flow
 1 .Menu
-Menu -> select Nation or Club 1, 2 or 3 (touch or voice)
+Menu -> select Nation or Club 1, 2 or 3 (touch or voice) \
 (The club list is divided into three. Club 1: 1, a-e, Club 2: f-o, Club 3: p-z)
 
 2-1. When selected a nation
@@ -22,7 +22,7 @@ All nation list → select nation (touch or voice) → club list → select club
 All club list → club selection (touch or voice) → nation list → select nation (touch or voice) → player list → select player (touch or voice) player profile
 
 ## How to invoke
-When reset or call menu: Reset, Menu
-When call club list: Club 1, Club 2, Club 3
-When call nation list: Nation, Country
+When reset or call menu: Reset, Menu \
+When call club list: Club 1, Club 2, Club 3 \
+When call nation list: Nation, Country \
 When selecting number: one, two, three,,,
