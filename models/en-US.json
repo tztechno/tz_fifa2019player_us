@@ -1,0 +1,123 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "favorite football players",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "SelectNumberIntent",
+          "slots": [
+            {
+              "name": "num",
+              "type": "AMAZON.NUMBER"
+            },
+            {
+              "name": "nation",
+              "type": "NATION"
+            },
+            {
+              "name": "club_one",
+              "type": "CLUB_ONE"
+            },
+            {
+              "name": "club_two",
+              "type": "CLUB_TWO"
+            },
+            {
+              "name": "club_three",
+              "type": "CLUB_THREE"
+            }
+          ],
+          "samples": [
+            "{club_three} please",
+            "{club_two} please",
+            "{club_one} please",
+            "{nation} please",
+            "{num} please",
+            "{club_three}",
+            "{club_two}",
+            "{club_one}",
+            "{nation}",
+            "{num}"
+          ]
+        },
+        {
+          "name": "ResetIntent",
+          "slots": [],
+          "samples": [
+            "menu",
+            "reset"
+          ]
+        }
+      ],
+      "types": [
+        {
+          "values": [
+            {
+              "name": {
+                "value": "country"
+              }
+            },
+            {
+              "name": {
+                "value": "nationality"
+              }
+            },
+            {
+              "name": {
+                "value": "nation"
+              }
+            }
+          ],
+          "name": "NATION"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "club one"
+              }
+            }
+          ],
+          "name": "CLUB_ONE"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "club two"
+              }
+            }
+          ],
+          "name": "CLUB_TWO"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "club three"
+              }
+            }
+          ],
+          "name": "CLUB_THREE"
+        }
+      ]
+    }
+  },
+  "version": "8"
+}
